@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="11">
       <module name="Projet9.RealEstateManager.app" target="17" />
+      <module name="RealEstateManagerV2.RealEstateManager.app" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
