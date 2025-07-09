@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="agent_array">
+        <item>Agent 1</item>
+        <item>Agent 2</item>
+        <item>Agent 3</item>
+    </string-array>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:window="http://schemas.android.com/apk/res-auto">
+
+    <!-- Define a split for the named activity pair. -->
+    <SplitPairRule
+        window:splitRatio="0.33"
+        window:splitMinWidthDp="840"
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always">
+        <SplitPairFilter
+            window:primaryActivityName=".AppartmentFragment"
+            window:secondaryActivityName=".DetailApartment"/>
+    </SplitPairRule>
+
+    <!-- Automatically launch a placeholder for the detail activity. -->
+    <SplitPlaceholderRule
+        window:placeholderActivityName=".PlaceholderActivity"
+        window:splitRatio="0.33"
+        window:splitMinWidthDp="840"
+        window:finishPrimaryWithPlaceholder="always"
+        window:stickyPlaceholder="false">
+        <ActivityFilter
+            window:activityName=".AppartmentFragment"/>
+    </SplitPlaceholderRule>
+
+    <ActivityRule
+        window:alwaysExpand="true">
+        <ActivityFilter
+            window:activityName=".EditApartmentActivity"
+            />
+        <ActivityFilter
+            window:activityName=".AddAppartmentActivity"
+            />
+        <ActivityFilter
+            window:activityName=".MapFragment"
+            />
+        <ActivityFilter
+            window:activityName=".FilterMapFragment"
+            />
+        <ActivityFilter
+            window:activityName=".MainActivity"
+            />
+        <ActivityFilter
+            window:activityName=".Simulator"
+            />
+    </ActivityRule>
+
+</resources>

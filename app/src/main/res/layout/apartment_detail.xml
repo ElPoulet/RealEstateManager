@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"> <FrameLayout
+    android:id="@+id/frameLayoutGallery"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/detail_apartment_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/detail_item_apartment_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_background" android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="Appartement" />
+
+</FrameLayout>
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_arrow_back"
+        android:elevation="4dp"
+        android:contentDescription="Retour"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@android:color/white" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutGallery">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/detail_item_apartment_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="8dp"
+                tools:text="Appartement Lumineux Centre Ville" />
+
+            <LinearLayout
+                android:id="@+id/layout_detail_apartment_living_space"
+                style="@style/DetailLineLayout">
+
+                <ImageView
+                    android:id="@+id/imageView_living_space"
+                    style="@style/DetailLineIcon"
+                    android:src="@drawable/ic_surface" />
+
+                <TextView
+                    android:id="@+id/detail_text_apartment_living_space"
+                    style="@style/DetailLineLabel"
+                    android:text="@string/Surface" />
+
+                <TextView
+                    android:id="@+id/detail_item_apartment_living_space"
+                    style="@style/DetailLineValue"
+                    tools:text="85" />
+
+                <TextView
+                    android:id="@+id/detail_text_unity_surface"
+                    style="@style/DetailLineUnit"
+                    tools:text="m²" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_detail_apartment_address"
+                style="@style/DetailLineLayout">
+
+                <ImageView
+                    android:id="@+id/imageView_address"
+                    style="@style/DetailLineIcon"
+                    android:src="@drawable/ic_location" />
+
+                <TextView
+                    android:id="@+id/detail_text_apartment_address"
+                    style="@style/DetailLineLabel"
+                    android:text="@string/Address" />
+
+                <TextView
+                    android:id="@+id/detail_item_apartment_address"
+                    style="@style/DetailLineValue"
+                    tools:text="123 Rue de la Paix, 75001 Paris" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_detail_apartment_price"
+                style="@style/DetailLineLayout">
+
+                <ImageView
+                    android:id="@+id/imageView_price"
+                    style="@style/DetailLineIcon"
+                    android:src="@drawable/ic_price" />
+
+                <TextView
+                    android:id="@+id/detail_text_apartment_price"
+                    style="@style/DetailLineLabel"
+                    android:text="@string/Price" />
+
+                <TextView
+                    android:id="@+id/detail_item_apartment_price"
+                    style="@style/DetailLineValue"
+                    tools:text="350.000" />
+
+                <TextView
+                    android:id="@+id/imageView_price_symbol"
+                    style="@style/DetailLineUnit"
+                    tools:text="€" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_detail_apartment_status"
+                style="@style/DetailLineLayout">
+
+                <ImageView
+                    android:id="@+id/imageView_status"
+                    style="@style/DetailLineIcon"
+                    android:src="@drawable/ic_sell" />
+
+                <TextView
+                    android:id="@+id/detail_text_apartment_status"
+                    style="@style/DetailLineLabel"
+                    android:text="@string/Status" />
+
+                <TextView
+                    android:id="@+id/detail_item_apartment_status"
+                    style="@style/DetailLineValue"
+                    tools:text="À vendre" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_detail_apartment_description"
+                style="@style/DetailLineLayout">
+
+                <ImageView
+                    android:id="@+id/imageView_description"
+                    style="@style/DetailLineIcon"
+                    android:src="@drawable/ic_description" />
+
+                <TextView
+                    android:id="@+id/detail_text_apartment_description"
+                    style="@style/DetailLineLabel"
+                    android:text="@string/Description" />
+
+                <TextView
+                    android:id="@+id/detail_item_apartment_description"
+                    style="@style/DetailLineValue"
+                    android:layout_weight="1"
+                    android:maxLines="5"
+                    android:ellipsize="end"
+                    tools:text="Ce charmant appartement est situé au cœur de la ville, à proximité de toutes commodités. Il offre de grands espaces de vie et une luminosité exceptionnelle. Idéal pour une famille ou un investissement locatif." />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_detail_apartment_date_put_on_sale"
+                style="@style/DetailLineLayout">
+
+                <ImageView
+                    android:id="@+id/imageView_date_on_market"
+                    style="@style/DetailLineIcon"
+                    android:src="@drawable/ic_date" />
+
+                <TextView
+                    android:id="@+id/detail_text_apartment_date_put_on_sale"
+                    style="@style/DetailLineLabel"
+                    android:text="@string/Date_on_the_market" />
+
+                <TextView
+                    android:id="@+id/detail_item_apartment_date_put_on_sale"
+                    style="@style/DetailLineValue"
+                    tools:text="15/03/2023" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_detail_apartment_name_agent"
+                style="@style/DetailLineLayout">
+
+                <ImageView
+                    android:id="@+id/imageView_agent"
+                    style="@style/DetailLineIcon"
+                    android:src="@drawable/ic_agent" />
+
+                <TextView
+                    android:id="@+id/detail_text_apartment_name_agent"
+                    style="@style/DetailLineLabel"
+                    android:text="@string/Agent" />
+
+                <TextView
+                    android:id="@+id/detail_item_apartment_name_agent"
+                    style="@style/DetailLineValue"
+                    tools:text="Jean Dupont" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_detail_apartment_number_pieces"
+                style="@style/DetailLineLayout">
+
+                <ImageView
+                    android:id="@+id/imageView_pieces"
+                    style="@style/DetailLineIcon"
+                    android:src="@drawable/ic_pieces" />
+
+                <TextView
+                    android:id="@+id/detail_text_apartment_number_pieces"
+                    style="@style/DetailLineLabel"
+                    android:text="@string/Number_Pieces" />
+
+                <TextView
+                    android:id="@+id/detail_item_apartment_number_pieces"
+                    style="@style/DetailLineValue"
+                    tools:text="4" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_detail_apartment_point_of_interest"
+                style="@style/DetailLineLayout">
+
+                <ImageView
+                    android:id="@+id/imageView_points_of_interest"
+                    style="@style/DetailLineIcon"
+                    android:src="@drawable/ic_points_of_interest" />
+
+                <TextView
+                    android:id="@+id/detail_text_apartment_point_of_interest"
+                    style="@style/DetailLineLabel"
+                    android:text="@string/Point_Interest" />
+
+                <TextView
+                    android:id="@+id/detail_item_apartment_point_of_interest"
+                    style="@style/DetailLineValue"
+                    android:layout_weight="1"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    tools:text="Écoles, commerces, transports en commun, parc" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_modif_app"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:text="Modifier la propriété" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

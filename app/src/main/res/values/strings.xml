@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Real Estate Manager</string>
+
+    <string name="title_appartment"> List Apartment </string>
+    <string name="title_map"> Map </string>
+    <string name="Address"> Address: </string>
+    <string name="Surface"> Surface: </string>
+    <string name="Price"> Price: </string>
+    <string name="Status"> Status: </string>
+    <string name="Description"> Description: </string>
+    <string name="Date_on_the_market"> Date on the market: </string>
+    <string name="Agent"> Agent: </string>
+    <string name="Number_Pieces"> Pieces: </string>
+    <string name="Point_Interest"> Points of Interest: </string>
+    <string name="Type"> Type: </string>
+    <string name="Currency"> € </string>
+    <string name="GPS_coordinates"> GPS coordinates: </string>
+    <string name="Rate"> Rate: </string>
+    <string name="Contribution"> Contribution: </string>
+    <string name="Duration"> Duration: </string>
+
+    <string name="points_of_interest_title">Points d\'intérêt</string>
+    <string name="filter_school">École</string>
+    <string name="filter_market">Marché</string>
+    <string name="filter_park">Parc</string>
+    <string name="price_range_title">Gamme de Prix</string>
+    <string name="property_type_title">Type de Propriété</string>
+    <string name="number_of_rooms_title">Nombre de Pièces</string>
+    <string name="surface_area_title">Surface</string>
+    <string name="Surface_min">Surface Min</string>
+    <string name="send_filter_button">Appliquer les Filtres</string>
+    <string name="surface_icon_desc">Icône de surface</string>
+
+    <string name="icon_map_desc">Icon Map Desc</string>
+    <string name="icon_surface_desc">Icône de surface</string>
+    <string name="icon_price_desc">Icône de prix</string>
+    <string name="icon_description_desc">Icône de description</string>
+    <string name="icon_date_desc">Icône de date</string>
+    <string name="click_to_select_date">Cliquer pour sélectionner la date</string>
+    <string name="icon_image_add_desc">Icon add image</string>
+
+
+    <string name="Button_Calculate"> Calculate </string>
+    <string name="Add_Button"> Add </string>
+    <string name="Date_add_app"> Date: </string>
+
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+
+    <string name="price_min"> Price min </string>
+    <string name="price_max"> Price max </string>
+    <string name="text_price_min"> Price min: </string>
+    <string name="text_price_max"> Price max: </string>
+
+    <string name="Latitude"> Latitude </string>
+    <string name="Lng"> Longitude </string>
+
+</resources>

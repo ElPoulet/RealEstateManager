@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <item
+        android:id="@+id/nav_main"
+        android:title="MAIN"
+        android:icon="@drawable/ic_list_app"/>
+
+    <item
+        android:id="@+id/nav_map"
+        android:title="MAP"
+        android:icon="@drawable/ic_map"/>
+
+    <item
+        android:id="@+id/nav_search"
+        android:title="SEARCH"
+        android:icon="@drawable/ic_search"/>
+
+    <item
+        android:id="@+id/nav_list"
+        android:title="LIST"
+        android:icon="@drawable/ic_list"/>
+
+    <item
+        android:id="@+id/nav_simulator"
+        android:title="SIMULATOR"
+        android:icon="@drawable/ic_simulator"/>
+
+</menu>
