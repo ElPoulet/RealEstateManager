@@ -37,6 +37,8 @@ public class ApartmentDataRepository {
 
     public void createImage(Image image){ mImageDao.insertAllImage(image);}
 
+    public void createFilter(Filter filter){ mFilterDao.insertFilter(filter);}
+
     ///UPDATE
     public void updateApartment(Appartment appartment){ mApartmentDao.updateApartment(appartment);
         Log.i(TAG, "Check price in DataRepository: " + appartment.getRealEstatePrice());}
@@ -48,6 +50,8 @@ public class ApartmentDataRepository {
     public void deleteApartment(Appartment appartment){
         mApartmentDao.delete(appartment);
     }
+
+    public void deleteFilter(){ mFilterDao.deleteAll();}
 
     public void createApartmentWithImage(Appartment appartment, List<Image> images){
         mImageDao.addApartmentWithImages(appartment, images);

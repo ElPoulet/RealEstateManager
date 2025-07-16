@@ -1,5 +1,7 @@
 package com.openclassrooms.realestatemanager.fragment.list;
 
+import android.database.Cursor;
+
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -19,9 +21,9 @@ public interface FilterDao {
 
     @Query("SELECT * FROM apartment_table INNER JOIN filter_table WHERE " +
             "(filter_type IS NULL OR apartment_type = filter_type)" +
-            " AND (filter_price_min IS NULL OR filter_price_max IS NULL OR apartment_price BETWEEN filter_price_min AND filter_price_max)" +
-            " AND (filter_number_pieces IS NULL OR apartment_number_pieces = filter_number_pieces OR apartment_number_pieces > filter_number_pieces)" +
-            " AND (filter_surface_min IS NULL OR apartment_surface = filter_surface_min OR apartment_surface > filter_surface_min)" +
+            " AND ((filter_price_min = 0 AND filter_price_max = 0) OR apartment_price BETWEEN filter_price_min AND filter_price_max)" +
+            " AND (filter_number_pieces = 0 OR apartment_number_pieces = filter_number_pieces OR apartment_number_pieces > filter_number_pieces)" +
+            " AND (apartment_surface = filter_surface_min OR apartment_surface > filter_surface_min)" +
             " AND (filter_status_market = 0 OR apartment_interest_market = filter_status_market AND apartment_interest_market = 1)" +
             " AND (filter_status_school = 0 OR apartment_interest_school = filter_status_school AND apartment_interest_school = 1)" +
             " AND (filter_status_park = 0 OR apartment_interest_park = filter_status_park AND apartment_interest_park = 1)")
@@ -42,5 +44,10 @@ public interface FilterDao {
 
     @Delete
     void delete(Filter filter);
+
+    // Méthodes pour le Content Provider
+    @Query("SELECT * FROM filter_table LIMIT 1")
+    Cursor getFilterCursor();
+
 
 }

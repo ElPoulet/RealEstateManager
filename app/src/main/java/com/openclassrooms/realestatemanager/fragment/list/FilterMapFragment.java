@@ -20,11 +20,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.openclassrooms.realestatemanager.R;
+import com.openclassrooms.realestatemanager.injections.Injection;
+import com.openclassrooms.realestatemanager.injections.ViewModelFactory;
 
 import java.sql.SQLDataException;
 import java.util.concurrent.ExecutorService;
@@ -62,16 +65,19 @@ public class FilterMapFragment extends AppCompatActivity {
 
     private EditText editTextSurfaceFilter;
 
+    private ApartmentViewModel mApartmentViewModel;
+
     ApartmentDatabase apartmentDatabase;
 
     private Handler mainHandler = new Handler(Looper.getMainLooper()); // Updating UI on main thread
-    private ExecutorService executor = Executors.newSingleThreadExecutor(); // Executor for background tasks
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map_fragment_filter);
+
+        configureViewModel();
 
         drawerLayout = findViewById(R.id.drawer_layout_filter);
         toolbar = findViewById(R.id.toolbar_appartment_fragment);
@@ -184,52 +190,59 @@ public class FilterMapFragment extends AppCompatActivity {
 
         buttonSendFilter.setOnClickListener(view -> {
 
+            //apartmentDatabase = ApartmentDatabase.getInstance(getApplicationContext());
+            //apartmentDatabase.filterDao().deleteAll();
 
-            executor.submit(new Runnable() {
+            mApartmentViewModel.deleteAllFilter();
+
+            int valuePriceMin;
+            int valuePriceMax;
+            int valueSurfaceMin;
+
+            if(editTextPriceMin.getText().toString().matches("")){
+                valuePriceMin = 0;
+            }else{
+                valuePriceMin = Integer.parseInt(editTextPriceMin.getText().toString());
+            }
+
+            if(editTextPriceMax.getText().toString().matches("")){
+                //valuePriceMax = Integer.parseInt(null);
+                valuePriceMax = 0;
+            }else{
+                valuePriceMax = Integer.parseInt(editTextPriceMax.getText().toString());
+            }
+
+            int valueNumberPieces = Integer.parseInt(spinnerFilterNumberPieces.getSelectedItem().toString());
+            if (editTextSurfaceFilter.getText().toString().matches("")){
+                //valueSurfaceMin = Integer.parseInt(null);
+                valueSurfaceMin = 0;
+            }else valueSurfaceMin = Integer.parseInt(editTextSurfaceFilter.getText().toString());
+
+            Filter filter = new Filter(chipMarketFilterStatus, chipSchoolFilterStatus, chipParkFilterStatus, spinnerFilterType.getSelectedItem().toString(),
+                    valuePriceMin, valuePriceMax, valueNumberPieces, valueSurfaceMin);
+            //apartmentDatabase.filterDao().insertFilter(filter);
+
+            mApartmentViewModel.createFilter(filter);
+
+            mainHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    apartmentDatabase = ApartmentDatabase.getInstance(getApplicationContext());
-                    apartmentDatabase.filterDao().deleteAll();
 
-                    int valuePriceMin;
-                    int valuePriceMax;
-
-                    if(editTextPriceMin.getText().toString().matches("")){
-                       Toast.makeText(getApplicationContext(), "Vous devez mettre un prix",Toast.LENGTH_SHORT).show();
-                       return;
-                    }else{
-                       valuePriceMin = Integer.parseInt(editTextPriceMin.getText().toString());
-                    }
-
-                    if(editTextPriceMax.getText().toString().matches("")){
-                        valuePriceMax = Integer.parseInt(null);
-                    }else{
-                        valuePriceMax = Integer.parseInt(editTextPriceMax.getText().toString());
-                    }
-
-                    int valueNumberPieces = Integer.parseInt(spinnerFilterNumberPieces.getSelectedItem().toString());
-                    int valueSurfaceMin = Integer.parseInt(editTextSurfaceFilter.getText().toString());
-
-                    Filter filter = new Filter(chipMarketFilterStatus, chipSchoolFilterStatus, chipParkFilterStatus, spinnerFilterType.getSelectedItem().toString(),
-                            valuePriceMin, valuePriceMax, valueNumberPieces, valueSurfaceMin);
-                    apartmentDatabase.filterDao().insertFilter(filter);
-
-                    mainHandler.post(new Runnable() {
-                        @Override
-                        public void run() {
-
-                            Intent intent = new Intent(FilterMapFragment.this,AppartmentFragment.class);
-                            startActivity(intent);
-
-                        }
-                    });
+                    Intent intent = new Intent(FilterMapFragment.this,AppartmentFragment.class);
+                    startActivity(intent);
 
                 }
             });
 
+
         });
 
 
+    }
+
+    private void configureViewModel(){
+        ViewModelFactory mViewModelFactory = Injection.provideViewModelFactory(this);
+        this.mApartmentViewModel = ViewModelProviders.of(this,mViewModelFactory).get(ApartmentViewModel.class);
     }
 
 }

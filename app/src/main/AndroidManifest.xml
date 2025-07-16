@@ -38,6 +38,10 @@
                 android:name="${applicationId}.SplitInitializer"
                 android:value="androidx.startup" />
         </provider>
+        <provider
+            android:name=".fragment.list.contentprovider.ApartmentContentProvider"
+            android:authorities="com.openclassrooms.realestatemanager.fragment.list.contentprovider"
+            android:exported="true" />
         <activity android:name="com.openclassrooms.realestatemanager.fragment.list.MainActivity"
             android:exported="true">
             <intent-filter>

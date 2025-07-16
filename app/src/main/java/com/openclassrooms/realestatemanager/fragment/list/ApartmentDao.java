@@ -1,5 +1,7 @@
 package com.openclassrooms.realestatemanager.fragment.list;
 
+import android.database.Cursor;
+
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -29,6 +31,18 @@ public interface ApartmentDao {
 
     @Query("DELETE FROM apartment_table")
     void deleteAllApartment();
+
+    //Add fonction for the content provider
+    // Méthodes pour le Content Provider
+    @Query("SELECT * FROM apartment_table")
+    Cursor getAllApartmentsCursor();
+
+    @Query("SELECT * FROM apartment_table WHERE apartment_id = :id")
+    Cursor getApartmentByIdCursor(long id);
+
+    // Ajout d'une méthode pour récupérer un appartement par ID (nécessaire pour l'update/delete dans le ContentProvider)
+    @Query("SELECT * FROM apartment_table WHERE apartment_id = :id")
+    Appartment getApartmentById(long id);
 
 
 

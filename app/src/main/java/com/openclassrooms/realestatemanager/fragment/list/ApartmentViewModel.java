@@ -38,6 +38,14 @@ public class ApartmentViewModel extends ViewModel {
         executor.execute(() -> apartmentDataRepository.createApartment(apartment));
     }
 
+    public void createFilter(Filter filter){
+        executor.execute(() -> apartmentDataRepository.createFilter(filter));
+    }
+
+    public void deleteAllFilter(){
+        executor.execute(() -> apartmentDataRepository.deleteFilter());
+    }
+
     public void createApartmentWithImage(Appartment apartment, List<Image> images){
         executor.execute(() -> apartmentDataRepository.createApartmentWithImage(apartment, images));
     }
@@ -56,7 +64,7 @@ public class ApartmentViewModel extends ViewModel {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                listApartments = apartmentDataRepository.getApartments();
+                listApartments = apartmentDataRepository.getApartmentsWithFilter();
                 Log.i(TAG, "Data List Apartment in ApartmentViewModel: " + listApartments.size());
             }
         });

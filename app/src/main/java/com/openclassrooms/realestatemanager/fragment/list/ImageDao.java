@@ -1,11 +1,14 @@
 package com.openclassrooms.realestatemanager.fragment.list;
 
+import android.database.Cursor;
+
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Transaction;
+import androidx.room.Update;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,6 +68,26 @@ public interface ImageDao {
     @Query("SELECT * FROM apartment_table INNER JOIN image_table WHERE " +
             "(apartment_id = id_apartment) AND apartment_id= :id")
     List<Image> returnListImage(int id);
+
+    // Méthodes pour le Content Provider
+    @Query("SELECT * FROM image_table")
+    Cursor getAllImagesCursor();
+
+    @Query("SELECT * FROM image_table WHERE image_id = :id")
+    Cursor getImageByIdCursor(long id);
+
+    @Query("SELECT * FROM image_table WHERE image_id = :id")
+    Image getImageById(long id);
+
+    @Query("SELECT * FROM image_table WHERE id_apartment = :apartmentId")
+    Cursor getImagesByApartmentIdCursor(long apartmentId);
+
+    // Changement : insertImage retourne long
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    long insertImage(Image image);
+
+    @Update
+    int updateImage(Image image);
 
 
 }
