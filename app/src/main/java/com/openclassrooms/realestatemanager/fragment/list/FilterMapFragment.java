@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,6 +43,8 @@ public class FilterMapFragment extends AppCompatActivity {
     public Chip chipParkFilter;
 
     public Button buttonSendFilter;
+
+    public Button buttonResetFilter;
 
     public int chipSchoolFilterStatus;
 
@@ -177,6 +180,8 @@ public class FilterMapFragment extends AppCompatActivity {
 
         this.buttonSendFilter = findViewById(R.id.buttonSendFilter);
 
+        this.buttonResetFilter = findViewById(R.id.buttonResetFilter);
+
         this.editTextSurfaceFilter = findViewById(R.id.surface_filter);
 
         this.spinnerFilterNumberPieces = findViewById(R.id.spinner_filter_number_pieces);
@@ -187,6 +192,24 @@ public class FilterMapFragment extends AppCompatActivity {
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerFilterNumberPieces.setAdapter(adapterSpinnerNumberPieces);
+
+        buttonResetFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mApartmentViewModel.deleteAllFilter();
+
+
+                mainHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        Intent intent = new Intent(FilterMapFragment.this,AppartmentFragment.class);
+                        startActivity(intent);
+
+                    }
+                });
+            }
+        });
 
         buttonSendFilter.setOnClickListener(view -> {
 

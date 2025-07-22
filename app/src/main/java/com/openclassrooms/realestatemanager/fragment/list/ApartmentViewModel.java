@@ -71,6 +71,17 @@ public class ApartmentViewModel extends ViewModel {
        return listApartments;
     }
 
+    public List<Appartment> getListAllApartment(){
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                listApartments = apartmentDataRepository.getApartments();
+                Log.i(TAG, "Data List Apartment in ApartmentViewModel: " + listApartments.size());
+            }
+        });
+        return listApartments;
+    }
+
     public List<Image> getListImage(){
         executor.execute(new Runnable() {
             @Override

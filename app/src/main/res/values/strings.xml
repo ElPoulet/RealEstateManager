@@ -18,6 +18,7 @@
     <string name="Rate"> Rate: </string>
     <string name="Contribution"> Contribution: </string>
     <string name="Duration"> Duration: </string>
+    <string name="Reset_Filter"> Reset Filter </string>
 
     <string name="points_of_interest_title">Points d\'intérêt</string>
     <string name="filter_school">École</string>
