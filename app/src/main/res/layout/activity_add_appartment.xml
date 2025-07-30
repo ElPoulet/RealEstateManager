@@ -49,24 +49,20 @@
                     android:layout_marginEnd="8dp" android:src="@drawable/ic_map"
                     android:contentDescription="@string/icon_map_desc"/>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="0dp" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:boxBackgroundColor="@android:color/transparent"
-                    app:boxBackgroundMode="outline"
-                    app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxCornerRadiusBottomStart="10dp"
-                    app:boxCornerRadiusTopEnd="10dp"
-                    app:boxCornerRadiusTopStart="10dp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/textPostalAddress"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/Address"
-                        android:textColor="@color/black" />
-
-                </com.google.android.material.textfield.TextInputLayout>
+                <com.openclassrooms.realestatemanager.CustomPriceEditText
+                    android:id="@+id/textPostalAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:hintEnabled="true"
+                    app:hintAnimationEnabled="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:boxStrokeColor="@color/black"
+                    app:hintTextColor="@color/black" />
             </LinearLayout>
 
             <LinearLayout

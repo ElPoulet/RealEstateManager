@@ -74,6 +74,7 @@
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="Pixel_C_API_31" value="120" />
                   <entry key="Pixel_C_API_33" value="120" />
                   <entry key="Tests" value="360" />
                 </map>
@@ -100,6 +101,7 @@
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="Pixel_C_API_31" value="120" />
                   <entry key="Pixel_C_API_33" value="120" />
                   <entry key="Tests" value="360" />
                 </map>
@@ -127,6 +129,7 @@
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="Pixel_C_API_31" value="120" />
                   <entry key="Pixel_C_API_33" value="120" />
                   <entry key="Tests" value="360" />
                 </map>

@@ -1,13 +1,12 @@
 package com.openclassrooms.realestatemanager;
 
 
-import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 
+import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertThat;
 
-import android.content.ContentProvider;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -16,10 +15,9 @@ import android.net.Uri;
 
 import androidx.room.Room;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
-import androidx.test.platform.app.InstrumentationRegistry;
 
 import com.openclassrooms.realestatemanager.fragment.list.ApartmentDatabase;
-import com.openclassrooms.realestatemanager.fragment.list.contentprovider.ApartmentContentProvider;
+import com.openclassrooms.realestatemanager.fragment.list.contentprovider.ApartContentProvider;
 import com.openclassrooms.realestatemanager.fragment.list.contentprovider.ApartmentProviderContract;
 
 import org.junit.After;
@@ -50,22 +48,22 @@ public class ApartmentContentProviderTest {
         apartmentDatabase.close();
     }
 
-    /*@Test
+    @Test
     public void getFlatsWhenNoFlatInserted() {
-        final Cursor cursor = mContentResolver.query(ContentUris.withAppendedId(ApartmentProviderContract.CONTENT_URI_APARTMENTS, AGENT_ID), null, null, null, null);
+        final Cursor cursor = mContentResolver.query(ContentUris.withAppendedId(ApartContentProvider.BASE_CONTENT_URI, AGENT_ID), null, null, null, null);
         assertThat(cursor, notNullValue());
-        assertThat(cursor.getCount(), is(1));
+        assertThat(cursor.getCount(), is(5));
         cursor.close();
-    }*/
+    }
 
     @Test
     public void insertAndGetFlat() {
         // BEFORE : Adding demo flat
-        mContentResolver.insert(ApartmentProviderContract.CONTENT_URI_APARTMENTS, generateApartment());
+        final Uri uri = mContentResolver.insert(ApartContentProvider.BASE_CONTENT_URI, generateApartment());
         // TEST
-        final Cursor cursor = mContentResolver.query(ContentUris.withAppendedId(ApartmentProviderContract.CONTENT_URI_APARTMENTS, AGENT_ID), null, null, null, null);
+        final Cursor cursor = mContentResolver.query(ContentUris.withAppendedId(ApartContentProvider.BASE_CONTENT_URI, AGENT_ID), null, null, null, null);
         assertThat(cursor, notNullValue());
-        assertThat(cursor.getCount(), is(1));
+        assertThat(cursor.getCount(), is(5));
         assertThat(cursor.moveToFirst(), is(true));
         assertThat(cursor.getString(cursor.getColumnIndexOrThrow("apartment_type")), is("Loft"));
     }

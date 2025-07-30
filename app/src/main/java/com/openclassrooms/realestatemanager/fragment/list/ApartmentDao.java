@@ -44,6 +44,14 @@ public interface ApartmentDao {
     @Query("SELECT * FROM apartment_table WHERE apartment_id = :id")
     Appartment getApartmentById(long id);
 
+    @Insert
+    long insertApartment(Appartment appartment);
+
+    @Query("DELETE FROM apartment_table WHERE apartment_id = :flatId")
+    int deleteFlat(long flatId);
+
+    @Update
+    int updateFlat(Appartment appartment);
 
 
 

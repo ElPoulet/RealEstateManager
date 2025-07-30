@@ -62,7 +62,6 @@ public class ApartmentContentProvider extends ContentProvider {
     public boolean onCreate() {
         ApartmentDatabase database = ApartmentDatabase.getInstance(getContext());
         apartmentDao = database.apartmentDao();
-        filterDao = database.filterDao();
         imageDao = database.imageDao();
         return true;
     }

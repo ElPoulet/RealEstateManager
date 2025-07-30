@@ -1,5 +1,7 @@
 package com.openclassrooms.realestatemanager.fragment.list;
 
+import android.content.ContentValues;
+
 import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -255,6 +257,22 @@ public class Appartment {
 
     public void setRealEstateURLImage(@Nullable String realEstateURLImage){
         this.realEstateURLImage = realEstateURLImage;
+    }
+
+    public static Appartment fromContentValues(ContentValues values){
+        final Appartment appartment = new Appartment();
+
+        if (values.containsKey("apartment_type")) appartment.setRealEstateType(values.getAsString("apartment_type"));
+        if (values.containsKey("apartment_price")) appartment.setRealEstatePrice(values.getAsDouble("apartment_price"));
+        if (values.containsKey("apartment_surface")) appartment.setRealEstateLivingSpace(values.getAsInteger("apartment_surface"));
+        if (values.containsKey("apartment_number_pieces")) appartment.setRealEstateNumberOfPiecies(values.getAsInteger("apartment_number_pieces"));
+        if (values.containsKey("apartment_description")) appartment.setRealEstateDescription(values.getAsString("apartment_description"));
+        if (values.containsKey("apartment_address")) appartment.setRealEstateAddress(values.getAsString("apartment_address"));
+        if (values.containsKey("apartment_status")) appartment.setRealEstateStatus(values.getAsString("apartment_status"));
+        if (values.containsKey("apartment_date_on_sale")) appartment.setRealEstateDateOfPutOnSale(values.getAsString("apartment_date_on_sale"));
+        if (values.containsKey("apartment_name_agent")) appartment.setRealEstateNameAgent(values.getAsString("apartment_name_agent"));
+
+        return appartment;
     }
 
 }

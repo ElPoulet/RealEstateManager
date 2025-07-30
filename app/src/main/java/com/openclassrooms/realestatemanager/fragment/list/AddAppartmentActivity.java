@@ -15,6 +15,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -52,7 +53,7 @@ public class AddAppartmentActivity extends AppCompatActivity implements DatePick
 
     public EditText textviewName;
 
-    public EditText  textViewAddress;
+    public CustomPriceEditText  textViewAddress;
 
     public CustomPriceEditText textViewSurface;
 
@@ -135,9 +136,11 @@ public class AddAppartmentActivity extends AppCompatActivity implements DatePick
 
         //this.textviewName = findViewById(R.id.textName);
         this.textViewAddress = findViewById(R.id.textPostalAddress);
+        this.textViewAddress.setHint(R.string.Address);
 
         this.textViewSurface = findViewById(R.id.textSurface);
         this.textViewSurface.setHint(getString(R.string.Surface));
+        this.textViewSurface.setTextInputEditText(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
 
         this.textViewPrice = findViewById(R.id.textPrice);
 

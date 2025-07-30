@@ -2,6 +2,7 @@
 <com.google.android.material.textfield.TextInputLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/text_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_weight="1"
@@ -13,7 +14,7 @@
     app:boxCornerRadiusTopStart="10dp">
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textPrice"
+        android:id="@+id/text_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black" />

@@ -11,7 +11,8 @@ import com.google.android.material.textfield.TextInputLayout;
 public class CustomPriceEditText extends TextInputLayout {
 
     // Référence à l'EditText interne
-    private TextInputEditText priceEditText;
+    private TextInputEditText textInputEditText;
+    private TextInputLayout textInputLayout;
 
     // Constructeur principal pour l'instanciation depuis le code XML
     public CustomPriceEditText(Context context) {
@@ -37,12 +38,14 @@ public class CustomPriceEditText extends TextInputLayout {
         LayoutInflater.from(context).inflate(R.layout.custom_text_input_view, this, true);
 
         // Récupère la référence à l'TextInputEditText à l'intérieur du layout gonflé
-        priceEditText = findViewById(R.id.textPrice);
+        textInputEditText = findViewById(R.id.text_edit);
+
+        textInputLayout = findViewById(R.id.text_layout);
 
         // Vous pouvez ajouter ici une logique de personnalisation supplémentaire
         // par exemple, définir un type d'entrée, des listeners, etc.
-        if (priceEditText != null) {
-            priceEditText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        if (textInputEditText != null) {
+            textInputEditText.setInputType(InputType.TYPE_CLASS_TEXT);
         }
     }
 
@@ -51,7 +54,11 @@ public class CustomPriceEditText extends TextInputLayout {
      * @return Le texte du champ sous forme de String.
      */
     public String getText() {
-        return priceEditText != null ? priceEditText.getText().toString() : "";
+        return textInputEditText != null ? textInputEditText.getText().toString() : "";
+    }
+
+    public void setText(String address){
+        textInputEditText.setText(address);
     }
 
     /**
@@ -61,15 +68,20 @@ public class CustomPriceEditText extends TextInputLayout {
     @Override
     public void setHint(CharSequence hint) {
 
-        if (priceEditText != null) {
-            priceEditText.setHint(hint);
+        if (textInputEditText != null) {
+            //textInputEditText.setHint(hint);
+            textInputLayout.setHint(hint);
         }
 
         super.setHint(hint);
     }
 
+    public void setTextInputEditText(int inputEditText){
+        textInputEditText.setInputType(inputEditText);
+    }
+
     public TextInputEditText getEditText() {
-        return priceEditText;
+        return textInputEditText;
     }
 
 }
