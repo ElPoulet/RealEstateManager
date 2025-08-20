@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.openclassrooms.realestatemanager.R;
+import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
+import com.openclassrooms.realestatemanager.fragment.list.model.Image;
 
 import java.util.List;
 
@@ -81,38 +83,32 @@ public class AppartmentRecyclerAdapter extends RecyclerView.Adapter<AppartmentVi
                 .load(Uri.parse(imageToShow.getImgUrl()))
                 .into(holder.picture);
 
-        /*byte[] bitmap = appartment.getRealEstateURLImage().getBytes();
-        Bitmap image = BitmapFactory.decodeByteArray(bitmap, 0, bitmap.length);
-        holder.picture.setImageBitmap(image);*/
 
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Add the personal page for apartment
+        holder.itemView.setOnClickListener(view -> {
+            //Add the personal page for apartment
 
-                Appartment resultAppartmentToSend = appartments.get(holder.getAdapterPosition());
-                Intent intent = new Intent(context, DetailApartment.class);
-                intent.putExtra("apartmentId", resultAppartmentToSend.getRealEstateId());
-                intent.putExtra("apartmentType", resultAppartmentToSend.getRealEstateType());
-                intent.putExtra("apartmentAddress", resultAppartmentToSend.getRealEstateAddress());
-                intent.putExtra("apartmentLivingSpace", resultAppartmentToSend.getRealEstateLivingSpace());
-                intent.putExtra("apartmentPrice", resultAppartmentToSend.getRealEstatePrice());
-                intent.putExtra("apartmentStatus", resultAppartmentToSend.getRealEstateStatus());
-                intent.putExtra("apartmentDescription", resultAppartmentToSend.getRealEstateDescription());
-                intent.putExtra("apartmentDatePutOnSale", resultAppartmentToSend.getRealEstateDateOfPutOnSale());
-                intent.putExtra("apartmentNameAgent", resultAppartmentToSend.getRealEstateNameAgent());
-                intent.putExtra("apartmentNumberPieces", resultAppartmentToSend.getRealEstateNumberOfPiecies());
-                intent.putExtra("apartmentStatusInterestSchool", resultAppartmentToSend.getRealEstateStatusInterestSchool());
-                intent.putExtra("apartmentStatusInterestMarket", resultAppartmentToSend.getRealEstateStatusInterestMarket());
-                intent.putExtra("apartmentLat", resultAppartmentToSend.getRealEstateLat());
-                intent.putExtra("apartmentLng", resultAppartmentToSend.getRealEstateLng());
-                intent.putExtra("apartmentPicture", resultAppartmentToSend.getRealEstateURLImage());
+            Appartment resultAppartmentToSend = appartments.get(holder.getAdapterPosition());
+            Intent intent = new Intent(context, DetailApartment.class);
+            intent.putExtra("apartmentId", resultAppartmentToSend.getRealEstateId());
+            intent.putExtra("apartmentType", resultAppartmentToSend.getRealEstateType());
+            intent.putExtra("apartmentAddress", resultAppartmentToSend.getRealEstateAddress());
+            intent.putExtra("apartmentLivingSpace", resultAppartmentToSend.getRealEstateLivingSpace());
+            intent.putExtra("apartmentPrice", resultAppartmentToSend.getRealEstatePrice());
+            intent.putExtra("apartmentStatus", resultAppartmentToSend.getRealEstateStatus());
+            intent.putExtra("apartmentDescription", resultAppartmentToSend.getRealEstateDescription());
+            intent.putExtra("apartmentDatePutOnSale", resultAppartmentToSend.getRealEstateDateOfPutOnSale());
+            intent.putExtra("apartmentNameAgent", resultAppartmentToSend.getRealEstateNameAgent());
+            intent.putExtra("apartmentNumberPieces", resultAppartmentToSend.getRealEstateNumberOfPiecies());
+            intent.putExtra("apartmentStatusInterestSchool", resultAppartmentToSend.getRealEstateStatusInterestSchool());
+            intent.putExtra("apartmentStatusInterestMarket", resultAppartmentToSend.getRealEstateStatusInterestMarket());
+            intent.putExtra("apartmentLat", resultAppartmentToSend.getRealEstateLat());
+            intent.putExtra("apartmentLng", resultAppartmentToSend.getRealEstateLng());
+            intent.putExtra("apartmentPicture", resultAppartmentToSend.getRealEstateURLImage());
 
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
 
-            }
         });
 
     }

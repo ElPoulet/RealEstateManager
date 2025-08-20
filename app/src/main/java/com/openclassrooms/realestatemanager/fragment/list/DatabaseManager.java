@@ -9,6 +9,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
+
 import java.sql.SQLDataException;
 import java.util.ArrayList;
 

@@ -1,21 +1,15 @@
 package com.openclassrooms.realestatemanager;
 
 
-
 import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static junit.framework.TestCase.assertTrue;
-
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThat;
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule;
 import androidx.room.Room;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.openclassrooms.realestatemanager.fragment.list.ApartmentDatabase;
-import com.openclassrooms.realestatemanager.fragment.list.Appartment;
+import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
 
 import org.junit.After;
 import org.junit.Before;

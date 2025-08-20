@@ -13,11 +13,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.openclassrooms.realestatemanager.R;
 import com.openclassrooms.realestatemanager.fragment.list.embedding.MyAdapterSlider;
+import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
+import com.openclassrooms.realestatemanager.fragment.list.model.Image;
 import com.openclassrooms.realestatemanager.injections.Injection;
 import com.openclassrooms.realestatemanager.injections.ViewModelFactory;
 
@@ -56,17 +57,14 @@ public class DetailApartment extends AppCompatActivity {
         configureViewModel();
         //getImages();
 
-        mainHandler.post(new Runnable() {
-            @Override
-            public void run() {
+        mainHandler.post(() -> {
 
-                getImages();
-                configureViewModel();
+            getImages();
+            configureViewModel();
 
-                myAdapter = new MyAdapterSlider(dataList, getApplicationContext());
-                viewPager2.setAdapter(myAdapter);
+            myAdapter = new MyAdapterSlider(dataList, getApplicationContext());
+            viewPager2.setAdapter(myAdapter);
 
-            }
         });
 
 
@@ -80,12 +78,9 @@ public class DetailApartment extends AppCompatActivity {
 
 
         buttonBack = findViewById(R.id.buttonBack);
-        buttonBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DetailApartment.this, AppartmentFragment.class);
-                startActivity(intent);
-            }
+        buttonBack.setOnClickListener(v -> {
+            Intent intent = new Intent(DetailApartment.this, AppartmentFragment.class);
+            startActivity(intent);
         });
 
 

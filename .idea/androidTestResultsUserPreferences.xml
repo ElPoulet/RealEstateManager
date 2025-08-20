@@ -3,6 +3,19 @@
   <component name="AndroidTestResultsUserPreferences">
     <option name="androidTestResultsTableState">
       <map>
+        <entry key="-1262243123">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Pixel_C_API_31" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="-1190161139">
           <value>
             <AndroidTestResultsTableState>
@@ -74,6 +87,8 @@
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="Pixel4" value="120" />
+                  <entry key="Pixel_6_API_31" value="120" />
                   <entry key="Pixel_C_API_31" value="120" />
                   <entry key="Pixel_C_API_33" value="120" />
                   <entry key="Tests" value="360" />
@@ -101,6 +116,7 @@
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="Pixel4" value="120" />
                   <entry key="Pixel_C_API_31" value="120" />
                   <entry key="Pixel_C_API_33" value="120" />
                   <entry key="Tests" value="360" />
@@ -116,6 +132,7 @@
                 <map>
                   <entry key="Duration" value="90" />
                   <entry key="Pixel_6_API_31" value="120" />
+                  <entry key="Pixel_C_API_31" value="120" />
                   <entry key="Pixel_C_API_33" value="120" />
                   <entry key="Tests" value="360" />
                 </map>
@@ -129,6 +146,7 @@
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="Pixel_6_API_31" value="120" />
                   <entry key="Pixel_C_API_31" value="120" />
                   <entry key="Pixel_C_API_33" value="120" />
                   <entry key="Tests" value="360" />

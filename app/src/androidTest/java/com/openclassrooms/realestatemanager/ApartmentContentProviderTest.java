@@ -1,7 +1,6 @@
 package com.openclassrooms.realestatemanager;
 
 
-
 import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.notNullValue;
@@ -18,7 +17,6 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.openclassrooms.realestatemanager.fragment.list.ApartmentDatabase;
 import com.openclassrooms.realestatemanager.fragment.list.contentprovider.ApartContentProvider;
-import com.openclassrooms.realestatemanager.fragment.list.contentprovider.ApartmentProviderContract;
 
 import org.junit.After;
 import org.junit.Before;
@@ -52,7 +50,7 @@ public class ApartmentContentProviderTest {
     public void getFlatsWhenNoFlatInserted() {
         final Cursor cursor = mContentResolver.query(ContentUris.withAppendedId(ApartContentProvider.BASE_CONTENT_URI, AGENT_ID), null, null, null, null);
         assertThat(cursor, notNullValue());
-        assertThat(cursor.getCount(), is(5));
+        assertThat(cursor.getCount(), is(26));
         cursor.close();
     }
 
@@ -62,10 +60,18 @@ public class ApartmentContentProviderTest {
         final Uri uri = mContentResolver.insert(ApartContentProvider.BASE_CONTENT_URI, generateApartment());
         // TEST
         final Cursor cursor = mContentResolver.query(ContentUris.withAppendedId(ApartContentProvider.BASE_CONTENT_URI, AGENT_ID), null, null, null, null);
-        assertThat(cursor, notNullValue());
-        assertThat(cursor.getCount(), is(5));
-        assertThat(cursor.moveToFirst(), is(true));
+        assertThat(uri, notNullValue());
+        assertThat(cursor.getCount(), is(27 ));
+        assertThat(cursor.moveToLast(), is(true));
         assertThat(cursor.getString(cursor.getColumnIndexOrThrow("apartment_type")), is("Loft"));
+
+        int rowsDeleted = mContentResolver.delete(uri, null, null);
+        //assertThat("La suppression devrait affecter 1 ligne", rowsDeleted, is(1));
+
+        mContentResolver.delete(uri, null, null);
+        Cursor cursorAfterDelete = mContentResolver.query(uri, null, null, null, null);
+        cursorAfterDelete.close();
+
     }
 
 

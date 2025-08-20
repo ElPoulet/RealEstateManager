@@ -3,6 +3,9 @@ package com.openclassrooms.realestatemanager.fragment.list;
 import androidx.room.Embedded;
 import androidx.room.Relation;
 
+import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
+import com.openclassrooms.realestatemanager.fragment.list.model.Image;
+
 import java.util.List;
 
 public class ImageWithApartment {

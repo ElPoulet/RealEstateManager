@@ -21,7 +21,7 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.openclassrooms.realestatemanager.R;
-import com.openclassrooms.realestatemanager.fragment.list.Image;
+import com.openclassrooms.realestatemanager.fragment.list.model.Image;
 
 import java.util.List;
 

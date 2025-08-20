@@ -6,7 +6,14 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Appartment.class,Filter.class,Image.class}, version = 1)
+import com.openclassrooms.realestatemanager.fragment.list.dao.ApartmentDao;
+import com.openclassrooms.realestatemanager.fragment.list.dao.FilterDao;
+import com.openclassrooms.realestatemanager.fragment.list.dao.ImageDao;
+import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
+import com.openclassrooms.realestatemanager.fragment.list.model.Filter;
+import com.openclassrooms.realestatemanager.fragment.list.model.Image;
+
+@Database(entities = {Appartment.class, Filter.class, Image.class}, version = 1)
 public abstract class ApartmentDatabase extends RoomDatabase {
 
     private static ApartmentDatabase apartmentDatabase;

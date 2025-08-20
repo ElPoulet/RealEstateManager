@@ -1,5 +1,9 @@
 package com.openclassrooms.realestatemanager;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -50,5 +54,12 @@ public class Utils {
         //return wifi.isWifiEnabled();
     }*/
 
+    public static Boolean isInternetAvailable(Context context){
+        ConnectivityManager connectivityManager =
+                (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
+        return  activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+    }
 
 }

@@ -23,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.openclassrooms.realestatemanager.R;
+import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
 import com.openclassrooms.realestatemanager.injections.Injection;
 import com.openclassrooms.realestatemanager.injections.ViewModelFactory;
 
@@ -71,8 +72,6 @@ public class EditApartmentActivity extends AppCompatActivity implements DatePick
     private ApartmentViewModel mApartmentViewModel;
 
     private ImageView searchIconAddress;
-
-    private static final String CHANNEL_ID = "1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -180,12 +179,7 @@ public class EditApartmentActivity extends AppCompatActivity implements DatePick
 
         this.buttonModificationApartment = findViewById(R.id.button_modifcation_apartment);
 
-        this.buttonModificationApartment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                modificationDataApartment();
-            }
-        });
+        this.buttonModificationApartment.setOnClickListener(view -> modificationDataApartment());
 
         setInformationAp();
 
@@ -225,9 +219,6 @@ public class EditApartmentActivity extends AppCompatActivity implements DatePick
         apartment.setRealEstateStatusInterestMarket(apartmentPointOfInterestMarket);
         apartment.setRealEstateLat(apartmentLat);
         apartment.setRealEstateLng(apartmentLng);
-
-        //byte[] returnBytes = apartmentPicture.getBytes(StandardCharsets.UTF_8);
-        //apartment.setRealEstateURLImage(returnBytes);
 
     }
 
@@ -324,13 +315,10 @@ public class EditApartmentActivity extends AppCompatActivity implements DatePick
         notifications.createNotification(getApplicationContext(), returnApartment.getRealEstateId(), "Modification Apartment",
                 "The apartment data has been modified");
 
-        mainHandler.post(new Runnable() {
-            @Override
-            public void run() {
+        mainHandler.post(() -> {
 
-                Intent intent = new Intent(EditApartmentActivity.this, AppartmentFragment.class);
-                startActivity(intent);
-            }
+            Intent intent = new Intent(EditApartmentActivity.this, AppartmentFragment.class);
+            startActivity(intent);
         });
     }
 

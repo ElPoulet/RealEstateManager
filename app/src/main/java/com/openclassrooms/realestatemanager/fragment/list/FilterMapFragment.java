@@ -1,18 +1,14 @@
 package com.openclassrooms.realestatemanager.fragment.list;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.Nullable;
@@ -27,12 +23,9 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.openclassrooms.realestatemanager.R;
+import com.openclassrooms.realestatemanager.fragment.list.model.Filter;
 import com.openclassrooms.realestatemanager.injections.Injection;
 import com.openclassrooms.realestatemanager.injections.ViewModelFactory;
-
-import java.sql.SQLDataException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class FilterMapFragment extends AppCompatActivity {
 
@@ -69,8 +62,6 @@ public class FilterMapFragment extends AppCompatActivity {
     private EditText editTextSurfaceFilter;
 
     private ApartmentViewModel mApartmentViewModel;
-
-    ApartmentDatabase apartmentDatabase;
 
     private Handler mainHandler = new Handler(Looper.getMainLooper()); // Updating UI on main thread
 

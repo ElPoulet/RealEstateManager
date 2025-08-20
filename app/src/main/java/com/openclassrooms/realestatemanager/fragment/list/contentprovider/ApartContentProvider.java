@@ -3,7 +3,6 @@ package com.openclassrooms.realestatemanager.fragment.list.contentprovider;
 import static com.openclassrooms.realestatemanager.fragment.list.contentprovider.ApartmentProviderContract.CONTENT_TYPE_APARTMENTS;
 
 import android.content.ContentProvider;
-import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -12,9 +11,9 @@ import android.net.Uri;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.openclassrooms.realestatemanager.fragment.list.ApartmentDao;
+import com.openclassrooms.realestatemanager.fragment.list.dao.ApartmentDao;
 import com.openclassrooms.realestatemanager.fragment.list.ApartmentDatabase;
-import com.openclassrooms.realestatemanager.fragment.list.Appartment;
+import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
 
 public class ApartContentProvider extends ContentProvider {
 
@@ -28,7 +27,11 @@ public class ApartContentProvider extends ContentProvider {
 
     @Override
     public boolean onCreate(){
-        return true;
+        if (getContext() != null) {
+            apartmentDao = ApartmentDatabase.getInstance(getContext()).apartmentDao();
+            return apartmentDao != null; // Retourne true si le DAO est initialisé
+        }
+        return false;
     }
 
     @Nullable
@@ -52,11 +55,15 @@ public class ApartContentProvider extends ContentProvider {
     @Override
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues contentValues){
         if (getContext() != null){
-            final long id = apartmentDao.insertApartment(Appartment.fromContentValues(contentValues));
 
-            if(id != 0){
-                getContext().getContentResolver().notifyChange(uri, null);
-                return ContentUris.withAppendedId(uri,id);
+            long id = apartmentDao.insertApartment(Appartment.fromContentValues(contentValues));
+
+            if(id > 0){
+                Uri resultUri = ContentUris.withAppendedId(BASE_CONTENT_URI, id);
+                return resultUri;
+
+                //getContext().getContentResolver().notifyChange(uri, null);
+                //return ContentUris.withAppendedId(uri,id);
             }
         }
 

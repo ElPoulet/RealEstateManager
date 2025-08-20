@@ -8,16 +8,13 @@ import android.database.Cursor;
 import android.net.Uri;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import android.util.Log;
 
-import com.openclassrooms.realestatemanager.fragment.list.ApartmentDao;
+import com.openclassrooms.realestatemanager.fragment.list.dao.ApartmentDao;
 import com.openclassrooms.realestatemanager.fragment.list.ApartmentDatabase;
-import com.openclassrooms.realestatemanager.fragment.list.Appartment;
-import com.openclassrooms.realestatemanager.fragment.list.Filter;
-import com.openclassrooms.realestatemanager.fragment.list.FilterDao;
-import com.openclassrooms.realestatemanager.fragment.list.Image;
-import com.openclassrooms.realestatemanager.fragment.list.ImageDao;
-import com.openclassrooms.realestatemanager.fragment.list.contentprovider.ApartmentProviderContract;
+import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
+import com.openclassrooms.realestatemanager.fragment.list.dao.FilterDao;
+import com.openclassrooms.realestatemanager.fragment.list.model.Image;
+import com.openclassrooms.realestatemanager.fragment.list.dao.ImageDao;
 
 import static com.openclassrooms.realestatemanager.fragment.list.contentprovider.ApartmentProviderContract.AUTHORITY;
 import static com.openclassrooms.realestatemanager.fragment.list.contentprovider.ApartmentProviderContract.CONTENT_URI_APARTMENTS;

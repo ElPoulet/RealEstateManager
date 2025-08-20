@@ -4,6 +4,13 @@ import static android.content.ContentValues.TAG;
 
 import android.util.Log;
 
+import com.openclassrooms.realestatemanager.fragment.list.dao.ApartmentDao;
+import com.openclassrooms.realestatemanager.fragment.list.dao.FilterDao;
+import com.openclassrooms.realestatemanager.fragment.list.dao.ImageDao;
+import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
+import com.openclassrooms.realestatemanager.fragment.list.model.Filter;
+import com.openclassrooms.realestatemanager.fragment.list.model.Image;
+
 import java.util.List;
 
 public class ApartmentDataRepository {
@@ -12,7 +19,7 @@ public class ApartmentDataRepository {
     private final FilterDao mFilterDao;
     private final ImageDao mImageDao;
 
-    public ApartmentDataRepository(ApartmentDao apartmentDao,FilterDao filterDao, ImageDao imageDao){
+    public ApartmentDataRepository(ApartmentDao apartmentDao, FilterDao filterDao, ImageDao imageDao){
         this.mApartmentDao = apartmentDao;
         this.mFilterDao = filterDao;
         this.mImageDao = imageDao;

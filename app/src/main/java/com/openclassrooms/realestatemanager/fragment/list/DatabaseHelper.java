@@ -60,7 +60,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     static final String DATABASE_TABLE_PHOTO = "PHOTO";
     static final String PHOTO_ID = "_ID";
     static final String PHOTO_URI = "photo_uri";
-    static final String APPARTMENT_ID_PHOTO = "appartment_id_photo";
 
     private static final String CREATE_DB_QUERY = "CREATE TABLE " + DATABASE_TABLE +
             " ( " + APPARTMENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -76,10 +75,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + FILTER_STATUS_PARK + " INTEGER, " + FILTER_TYPE + " TEXT, " + FILTER_STATUS_MARKET + " INTEGER, " +
             FILTER_PRICE_MIN + " INTERGER, " + FILTER_PRICE_MAX + " INTEGER, " + FILTER_NUMBER_PIECES + " INTEGER, " +
             FILTER_SURFACE_MIN + " INTEGER ) ";
-
-    /*private static final String CREATE_DB_QUERY_PHOTO = "CREATE TABLE " + DATABASE_TABLE_PHOTO + " ( " + PHOTO_ID +
-            " INTEGER PRIMARY KEY AUTOINCREMENT, " + PHOTO_URI + " BLOB, " +
-            " INTEGER, FOREIGN KEY("+APPARTMENT_ID_PHOTO+") REFERENCES "+DATABASE_TABLE+"("+APPARTMENT_ID+"));";*/
 
     public DatabaseHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

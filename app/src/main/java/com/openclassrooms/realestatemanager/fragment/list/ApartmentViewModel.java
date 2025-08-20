@@ -6,6 +6,10 @@ import android.util.Log;
 
 import androidx.lifecycle.ViewModel;
 
+import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
+import com.openclassrooms.realestatemanager.fragment.list.model.Filter;
+import com.openclassrooms.realestatemanager.fragment.list.model.Image;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;

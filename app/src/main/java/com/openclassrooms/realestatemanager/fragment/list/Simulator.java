@@ -1,7 +1,5 @@
 package com.openclassrooms.realestatemanager.fragment.list;
 
-import static com.google.android.material.internal.ContextUtils.getActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;

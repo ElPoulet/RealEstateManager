@@ -24,6 +24,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.openclassrooms.realestatemanager.R;
 import com.openclassrooms.realestatemanager.Utils;
+import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
 
 import java.sql.SQLDataException;
 import java.util.ArrayList;
