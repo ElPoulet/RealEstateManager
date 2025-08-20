@@ -49,7 +49,7 @@
                     android:layout_marginEnd="8dp" android:src="@drawable/ic_map"
                     android:contentDescription="@string/icon_map_desc"/>
 
-                <com.openclassrooms.realestatemanager.CustomPriceEditText
+                <com.openclassrooms.realestatemanager.utils.CustomPriceEditText
                     android:id="@+id/textPostalAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
                     android:src="@drawable/ic_surface"
                     android:contentDescription="@string/icon_surface_desc"/>
 
-                <com.openclassrooms.realestatemanager.CustomPriceEditText
+                <com.openclassrooms.realestatemanager.utils.CustomPriceEditText
                     android:id="@+id/textSurface"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.fragment.list;
+package com.openclassrooms.realestatemanager.fragment.list.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;

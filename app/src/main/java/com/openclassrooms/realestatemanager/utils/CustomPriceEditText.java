@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager;
+package com.openclassrooms.realestatemanager.utils;
 
 import android.content.Context;
 import android.text.InputType;
@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.openclassrooms.realestatemanager.R;
 
 public class CustomPriceEditText extends TextInputLayout {
 

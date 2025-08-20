@@ -1,8 +1,8 @@
-package com.openclassrooms.realestatemanager.fragment.list;
+package com.openclassrooms.realestatemanager.database;
 
-import static com.openclassrooms.realestatemanager.fragment.list.DatabaseHelper.DATABASE_TABLE;
-import static com.openclassrooms.realestatemanager.fragment.list.DatabaseHelper.DATABASE_TABLE_FILTER;
-import static com.openclassrooms.realestatemanager.fragment.list.DatabaseHelper.DATABASE_TABLE_PHOTO;
+import static com.openclassrooms.realestatemanager.database.DatabaseHelper.DATABASE_TABLE;
+import static com.openclassrooms.realestatemanager.database.DatabaseHelper.DATABASE_TABLE_FILTER;
+import static com.openclassrooms.realestatemanager.database.DatabaseHelper.DATABASE_TABLE_PHOTO;
 
 import android.content.ContentValues;
 import android.content.Context;

@@ -8,8 +8,9 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule;
 import androidx.room.Room;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-import com.openclassrooms.realestatemanager.fragment.list.ApartmentDatabase;
+import com.openclassrooms.realestatemanager.database.ApartmentDatabase;
 import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
+import com.openclassrooms.realestatemanager.utils.Utils;
 
 import org.junit.After;
 import org.junit.Before;

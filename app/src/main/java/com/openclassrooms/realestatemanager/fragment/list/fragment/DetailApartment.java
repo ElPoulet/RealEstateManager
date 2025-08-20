@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.fragment.list;
+package com.openclassrooms.realestatemanager.fragment.list.fragment;
 
 import static android.content.ContentValues.TAG;
 

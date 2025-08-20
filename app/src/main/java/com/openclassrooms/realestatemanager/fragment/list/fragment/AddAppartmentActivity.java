@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.fragment.list;
+package com.openclassrooms.realestatemanager.fragment.list.fragment;
 
 
 
@@ -31,8 +31,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.google.android.material.chip.Chip;
-import com.openclassrooms.realestatemanager.CustomPriceEditText;
+import com.openclassrooms.realestatemanager.utils.CustomPriceEditText;
 import com.openclassrooms.realestatemanager.R;
+import com.openclassrooms.realestatemanager.utils.DatePicker;
+import com.openclassrooms.realestatemanager.notification.Notifications;
 import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
 import com.openclassrooms.realestatemanager.fragment.list.model.Image;
 import com.openclassrooms.realestatemanager.injections.Injection;

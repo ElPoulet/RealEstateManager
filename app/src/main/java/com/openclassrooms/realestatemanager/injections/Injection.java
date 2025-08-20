@@ -2,8 +2,8 @@ package com.openclassrooms.realestatemanager.injections;
 
 import android.content.Context;
 
-import com.openclassrooms.realestatemanager.fragment.list.ApartmentDataRepository;
-import com.openclassrooms.realestatemanager.fragment.list.ApartmentDatabase;
+import com.openclassrooms.realestatemanager.database.ApartmentDataRepository;
+import com.openclassrooms.realestatemanager.database.ApartmentDatabase;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;

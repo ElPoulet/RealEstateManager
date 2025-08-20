@@ -15,7 +15,7 @@ import android.net.Uri;
 import androidx.room.Room;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-import com.openclassrooms.realestatemanager.fragment.list.ApartmentDatabase;
+import com.openclassrooms.realestatemanager.database.ApartmentDatabase;
 import com.openclassrooms.realestatemanager.fragment.list.contentprovider.ApartContentProvider;
 
 import org.junit.After;

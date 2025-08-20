@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.fragment.list;
+package com.openclassrooms.realestatemanager.fragment.list.fragment;
 
 import static android.content.ContentValues.TAG;
 
@@ -23,6 +23,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.openclassrooms.realestatemanager.R;
+import com.openclassrooms.realestatemanager.utils.DatePicker;
+import com.openclassrooms.realestatemanager.notification.Notifications;
 import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
 import com.openclassrooms.realestatemanager.injections.Injection;
 import com.openclassrooms.realestatemanager.injections.ViewModelFactory;

@@ -8,7 +8,7 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.openclassrooms.realestatemanager.fragment.list.ImageWithApartment;
+import com.openclassrooms.realestatemanager.database.ImageWithApartment;
 import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
 import com.openclassrooms.realestatemanager.fragment.list.model.Filter;
 

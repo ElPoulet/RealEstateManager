@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.openclassrooms.realestatemanager.fragment.list.dao.ApartmentDao;
-import com.openclassrooms.realestatemanager.fragment.list.ApartmentDatabase;
+import com.openclassrooms.realestatemanager.database.ApartmentDatabase;
 import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
 import com.openclassrooms.realestatemanager.fragment.list.dao.FilterDao;
 import com.openclassrooms.realestatemanager.fragment.list.model.Image;

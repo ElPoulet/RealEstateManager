@@ -10,7 +10,7 @@ import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
 
-import com.openclassrooms.realestatemanager.fragment.list.ImageWithApartment;
+import com.openclassrooms.realestatemanager.database.ImageWithApartment;
 import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
 import com.openclassrooms.realestatemanager.fragment.list.model.Image;
 

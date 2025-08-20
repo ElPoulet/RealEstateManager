@@ -1,7 +1,6 @@
-package com.openclassrooms.realestatemanager.fragment.list;
+package com.openclassrooms.realestatemanager.fragment.list.fragment;
 
 
-import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;

@@ -42,7 +42,7 @@
             android:name=".fragment.list.contentprovider.ApartContentProvider"
             android:authorities="com.openclassrooms.realestatemanager.fragment.list.contentprovider"
             android:exported="true" />
-        <activity android:name="com.openclassrooms.realestatemanager.fragment.list.MainActivity"
+        <activity android:name="com.openclassrooms.realestatemanager.fragment.list.fragment.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,13 +53,13 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
-        <activity android:name=".fragment.list.MapFragment"></activity>
-        <activity android:name=".fragment.list.AppartmentFragment"></activity>
-        <activity android:name="com.openclassrooms.realestatemanager.fragment.list.AddAppartmentActivity"></activity>
-        <activity android:name="com.openclassrooms.realestatemanager.fragment.list.DetailApartment"></activity>
-        <activity android:name="com.openclassrooms.realestatemanager.fragment.list.FilterMapFragment"></activity>
-        <activity android:name="com.openclassrooms.realestatemanager.fragment.list.Simulator"></activity>
-        <activity android:name="com.openclassrooms.realestatemanager.fragment.list.EditApartmentActivity"></activity>
+        <activity android:name=".fragment.list.fragment.MapFragment"></activity>
+        <activity android:name=".fragment.list.fragment.AppartmentFragment"></activity>
+        <activity android:name="com.openclassrooms.realestatemanager.fragment.list.fragment.AddAppartmentActivity"></activity>
+        <activity android:name="com.openclassrooms.realestatemanager.fragment.list.fragment.DetailApartment"></activity>
+        <activity android:name="com.openclassrooms.realestatemanager.fragment.list.fragment.FilterMapFragment"></activity>
+        <activity android:name="com.openclassrooms.realestatemanager.fragment.list.fragment.Simulator"></activity>
+        <activity android:name="com.openclassrooms.realestatemanager.fragment.list.fragment.EditApartmentActivity"></activity>
         <activity android:name=".fragment.list.embedding.PlaceholderActivity"></activity>
     </application>
 

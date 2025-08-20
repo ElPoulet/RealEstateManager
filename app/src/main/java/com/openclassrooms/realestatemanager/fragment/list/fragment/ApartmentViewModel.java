@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.fragment.list;
+package com.openclassrooms.realestatemanager.fragment.list.fragment;
 
 import static android.content.ContentValues.TAG;
 
@@ -6,6 +6,7 @@ import android.util.Log;
 
 import androidx.lifecycle.ViewModel;
 
+import com.openclassrooms.realestatemanager.database.ApartmentDataRepository;
 import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
 import com.openclassrooms.realestatemanager.fragment.list.model.Filter;
 import com.openclassrooms.realestatemanager.fragment.list.model.Image;

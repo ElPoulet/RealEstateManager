@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.fragment.list;
+package com.openclassrooms.realestatemanager.notification;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
 

@@ -14,14 +14,14 @@ import androidx.window.embedding.SplitPairRule;
 import androidx.window.embedding.SplitPlaceholderRule;
 import androidx.window.embedding.SplitRule;
 
-import com.openclassrooms.realestatemanager.fragment.list.AddAppartmentActivity;
-import com.openclassrooms.realestatemanager.fragment.list.AppartmentFragment;
-import com.openclassrooms.realestatemanager.fragment.list.DetailApartment;
-import com.openclassrooms.realestatemanager.fragment.list.EditApartmentActivity;
-import com.openclassrooms.realestatemanager.fragment.list.FilterMapFragment;
-import com.openclassrooms.realestatemanager.fragment.list.MainActivity;
-import com.openclassrooms.realestatemanager.fragment.list.MapFragment;
-import com.openclassrooms.realestatemanager.fragment.list.Simulator;
+import com.openclassrooms.realestatemanager.fragment.list.fragment.AddAppartmentActivity;
+import com.openclassrooms.realestatemanager.fragment.list.fragment.AppartmentFragment;
+import com.openclassrooms.realestatemanager.fragment.list.fragment.DetailApartment;
+import com.openclassrooms.realestatemanager.fragment.list.fragment.EditApartmentActivity;
+import com.openclassrooms.realestatemanager.fragment.list.fragment.FilterMapFragment;
+import com.openclassrooms.realestatemanager.fragment.list.fragment.MainActivity;
+import com.openclassrooms.realestatemanager.fragment.list.fragment.MapFragment;
+import com.openclassrooms.realestatemanager.fragment.list.fragment.Simulator;
 
 import java.util.HashSet;
 import java.util.Set;

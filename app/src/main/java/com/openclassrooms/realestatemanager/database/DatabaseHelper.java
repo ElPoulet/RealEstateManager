@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.fragment.list;
+package com.openclassrooms.realestatemanager.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

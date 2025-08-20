@@ -3,8 +3,8 @@ package com.openclassrooms.realestatemanager.injections;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.openclassrooms.realestatemanager.fragment.list.ApartmentDataRepository;
-import com.openclassrooms.realestatemanager.fragment.list.ApartmentViewModel;
+import com.openclassrooms.realestatemanager.database.ApartmentDataRepository;
+import com.openclassrooms.realestatemanager.fragment.list.fragment.ApartmentViewModel;
 
 import java.util.concurrent.Executor;
 

@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.fragment.list;
+package com.openclassrooms.realestatemanager.utils;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;

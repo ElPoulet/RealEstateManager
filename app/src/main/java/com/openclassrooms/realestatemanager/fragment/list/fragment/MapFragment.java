@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.fragment.list;
+package com.openclassrooms.realestatemanager.fragment.list.fragment;
 
 
 import static android.content.ContentValues.TAG;
@@ -39,6 +39,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.navigation.NavigationView;
 import com.openclassrooms.realestatemanager.R;
+import com.openclassrooms.realestatemanager.database.ApartmentDatabase;
+import com.openclassrooms.realestatemanager.database.DatabaseManager;
 import com.openclassrooms.realestatemanager.fragment.list.model.Appartment;
 import com.openclassrooms.realestatemanager.injections.Injection;
 import com.openclassrooms.realestatemanager.injections.ViewModelFactory;
