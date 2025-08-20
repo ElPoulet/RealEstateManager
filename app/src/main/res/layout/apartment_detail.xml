@@ -5,7 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"> <FrameLayout
+    android:background="#F5F5F5">
+
+
+
+    <FrameLayout
     android:id="@+id/frameLayoutGallery"
     android:layout_width="match_parent"
     android:layout_height="300dp"
@@ -13,12 +17,27 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/detail_apartment_view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
-    <TextView
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/detail_apartment_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/buttonBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Retour"
+            android:elevation="4dp"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@android:color/black" />
+
+        <TextView
         android:id="@+id/detail_item_apartment_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,20 +54,6 @@
         tools:text="Appartement" />
 
 </FrameLayout>
-
-    <Button
-        android:id="@+id/buttonBack"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/ic_arrow_back"
-        android:elevation="4dp"
-        android:contentDescription="Retour"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@android:color/white" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
